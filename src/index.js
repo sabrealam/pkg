@@ -1,1 +1,0 @@
-export { default as ProfilePic } from './components/ProfilePic';

@@ -1,28 +1,21 @@
-name: Publish GitHub Package
+name: Node.js Package
 
 on:
   push:
-    tags:
-      - 'v*'  # This will trigger the workflow when a version tag is pushed (e.g., v1.0.0)
+    branches:
+      - main
 
 jobs:
-  publish:
+  publish-gpr:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
         with:
-          node-version: '16'
-          registry-url: 'https://npm.pkg.github.com'
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Publish to GitHub Packages
+          node-version: '18'
+          registry-url: https://npm.pkg.github.com/
+          scope: '@svan-garaaz'
+      - run: yarn install
+      - run: yarn publish --non-interactive --access public
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: npm publish
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
