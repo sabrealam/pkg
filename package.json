@@ -8,8 +8,5 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@sabrealam/pkg": "file:sabrealam-pkg-1.0.0.tgz"
-  }
+  "license": "ISC"
 }
