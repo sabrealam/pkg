@@ -15,7 +15,7 @@ jobs:
           node-version: '18'
           registry-url: https://npm.pkg.github.com/
           scope: '@svan-garaaz'
-      - run: npm install
+      - run: npm install --force
       - run: npm publish --non-interactive --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GH_TOKEN }}
