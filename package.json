@@ -1,6 +1,6 @@
 {
 	"name": "@sabrealam/pkg",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"description": "A shared React library for components and utilities.",
 	"main": "dist/index.js",
 	"module": "dist/index.esm.js",
